@@ -1,0 +1,71 @@
+/*--------------------------
+ pager
+----------------------------*/
+.pager {
+	@at-root {
+		& {
+  		display: flex;
+  		align-items: center;
+  		justify-content: space-between;
+  		margin-bottom: 40px;
+  		@include mix_mediaSp {
+    		margin-bottom: get_vw(20);
+      }
+		}
+		.pager__prev,
+		.pager__next {
+  		position: relative;
+  		font-size: 1.6rem;
+  		font-weight: 400;
+  		@include mix_mediaSp {
+    		@include fontSize(12);
+      }
+  		&::before {
+    		content: "";
+    		position: absolute;
+    		top: 0;
+    		bottom: 0;
+    		display: block;
+    		width: 30px;
+    		height: 1px;
+    		margin: auto 0;
+    		background-color: #000;
+    		@include mix_mediaSp {
+    	  	width: get_vw(15);
+        }
+  		}
+		}
+		.pager__prev {
+  		padding-left: 40px;
+  		@include mix_mediaSp {
+  	  	padding-left: get_vw(20);
+      }
+  		&::before {
+    		left: 0;
+  		}
+		}
+		.pager__next {
+  		padding-right: 40px;
+  		@include mix_mediaSp {
+  	  	padding-right: get_vw(20);
+      }
+  		&::before {
+    		right: 0;
+  		}
+		}
+		.pager__nav {
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+		}
+		.pager__nav__item {
+  		margin: 0 15px;
+  		font-size: 2rem;
+  		font-weight: 400;
+  		@include mix_mediaSp {
+    		margin: 0 get_vw(10);
+    		@include fontSize(13);
+      }
+		}
+	}
+}

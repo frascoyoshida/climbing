@@ -1,0 +1,89 @@
+/*--------------------------
+ button
+----------------------------*/
+.button {
+	@at-root {
+		& {
+  		display: flex;
+  		align-items: stretch;
+  		justify-content: center;
+  		flex-wrap: wrap;
+  		@include mix_mediaSp {
+    		
+      }
+		}
+		.button__item {
+  		position: relative;
+  		display: inline-block;
+      width: 100%;
+  		padding: 24px;
+  		border: 1px solid #000;
+  		border-radius: 60px;
+      box-shadow: 0px 4px 0px 0px rgba(216, 216, 216, 1);
+  		background-color: #fff;
+  		text-align: center;
+  		cursor: pointer;
+    	@include transition(all 0.2s);
+    	&:hover {
+      	opacity: 0.6;
+    	}
+  		input {
+    		position: absolute;
+    		left: -999em;
+  		}
+  		@include mix_mediaSp {
+  	  	padding: get_vw(12);
+      	&:hover {
+        	opacity: 1;
+      	}
+      }
+  		+ .button__item {
+    		margin-left: 40px;
+    		@include mix_mediaSp {
+          margin-top: get_vw(15);
+          margin-left: 0;
+        }
+  		}
+  		&::before {
+    		content: "";
+    		position: absolute;
+    		top: 0;
+    		right: 30px;
+    		bottom: 0;
+    		display: block;
+    		width: 9px;
+    		height: 9px;
+    		margin: auto 0;
+    		box-shadow: 2px 2px 0 0 #000;
+    		@include rotate(-45deg);
+        @include mix_mediaSp {
+      		right: get_vw(20);
+      		width: get_vw(8);
+      		height: get_vw(8);
+        }
+  		}
+  		&.-download {
+    		&::before {
+      		content: none;
+    		}
+        .button__txt {
+      		padding-right: 26px;
+      		background: url(../images/icn_download.png) no-repeat right center;
+      		background-size: contain;
+          @include mix_mediaSp {
+        		padding-right: get_vw(20);
+          }
+    		}
+  		}
+		}
+		.button__txt {
+  		display: inline-block;
+  		font-size: 1.6rem;
+  		font-weight: 500;
+  		line-height: 1;
+  		@include mix_mediaSp {
+  	  	@include fontSize(12);
+      }
+		}
+	}
+}

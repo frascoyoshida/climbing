@@ -1,0 +1,222 @@
+/*--------------------------
+ request
+----------------------------*/
+.request {
+	@at-root {
+		& {
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		max-width:100%;
+  		height: 100%;
+  		padding: 40 / 750 * 100% 0;
+  		background: url(../images/bg_request.jpg) no-repeat center center;
+  		background-size: cover;
+  		@include mix_mediaSp {
+    		display: block;
+    		padding: get_vw(30) 40 / 768 * 100% get_vw(40);
+      }
+		}
+		.request__wrap {
+  		max-width: 100%;
+  		width: 590 / 750 * 100%;
+  		@include mix_mediaSp {
+        width: auto;
+      }
+		}
+		.request__head {
+  		margin-bottom: 24px;
+  		text-align: center;
+  		@include mix_mediaSp {
+        margin-bottom: get_vw(18);
+      }
+  		.img {
+    		display: block;
+    		width: 117px;
+    		margin: 0 auto;
+    		@include mix_mediaSp {
+          width: get_vw(60);
+        }
+  		}
+  		.en {
+    		display: block;
+    		font-size: 5.4rem;
+    		font-style: italic;
+    		font-weight: 300;
+    		line-height: 1.1;
+    		@include mix_mediaSp {
+    	  	@include fontSize(35);
+        }
+  		}
+  		.jp {
+    		display: block;
+    		font-size: 1.6rem;
+    		font-weight: 700;
+    		@include mix_mediaSp {
+    	  	@include fontSize(11);
+        }
+  		}
+		}
+		.request__txt {
+  		margin-bottom: 36px;
+      font-size: 1.6rem;
+      line-height: 1.8;
+      text-align: center;
+      .red {
+        color: #e9342b;
+      }
+  		@include mix_mediaSp {
+        margin-bottom: get_vw(18);
+  	  	@include fontSize(12);
+      }
+		}
+		.request__form {
+  		display: flex;
+  		align-items: center;
+  		flex-wrap: wrap;
+  		margin-bottom: 20px;
+  		@include mix_mediaSp {
+        margin-bottom: get_vw(15);
+      }
+		}
+		.request__form__head {
+  		width: 100 / 590 * 100%;
+  		margin-bottom: 10px;
+  		font-size: 1.4rem;
+  		font-weight: 500;
+  		font-style: italic;
+  		&.-required {
+    		&::after {
+    		  content: "＊";
+    		  margin-left: 0.5em;
+    		  font-size: 0.8em;
+    		  font-style: normal;
+    		  color: #e9342b;
+    		}
+  		}
+  		@include mix_mediaSp {
+    		width: 148 / 688 * 100%;
+        margin-bottom: get_vw(7);
+  	  	@include fontSize(12);
+      }
+		}
+		.request__form__input {
+  		width: 490 / 590 * 100%;
+  		margin-bottom: 10px;
+  		@include mix_mediaSp {
+    		width: 540 / 688 * 100%;
+        margin-bottom: get_vw(7);
+      }
+  		input {
+    		display: block;
+    		width: 100%;
+    		height: 52px;
+    		padding: 10px 20px;
+    		background-color: #fff;
+    		font-size: 1.8rem;
+    		&:focus {
+      		box-shadow: 0 0 0 1px #e9342b inset;
+    		}
+    		@include mix_mediaSp {
+      		height: get_vw(36);
+      		padding: get_vw(10);
+  	    	@include fontSize(16);
+        }
+  		}
+		}
+		.request__form__select {
+  		position: relative;
+  		display: inline-block;
+  		&::before {
+    		content: "";
+    		position: absolute;
+    		top: 50%;
+    		right: 24px;
+    		bottom: 0;
+    		display: block;
+    		width: 10px;
+    		height: 10px;
+    		margin-top: -10px;
+    		box-shadow: 2px 2px 0 0 #fff;
+    		@include rotate(45deg);
+    		pointer-events: none;
+  		}
+  		select {
+    		display: block;
+    		height: 52px;
+    		padding: 10px 20px 10px 20px;
+    		border-right: 52px solid #d2d2d2;
+    		background-color: #fff;
+    		font-size: 1.4rem;
+        line-height: 1;
+    		&:focus {
+      		box-shadow: 0 0 0 1px #e9342b inset;
+    		}
+  		}
+  		@include mix_mediaSp {
+    		&::before {
+      		right: get_vw(16);
+      		width: get_vw(8);
+      		height: get_vw(8);
+      		margin-top: get_vw(-8);
+    		}
+    		select {
+      		height: get_vw(36);
+      		padding: get_vw(10);
+      		border-right-width: get_vw(36);
+  	    	@include fontSize(16);
+    		}
+      }
+		}
+		.request__button {
+  		.button__item {
+    		max-width: 370px;
+    		@include mix_mediaSp {
+      		max-width: get_vw(244);
+        }
+  		}
+		}
+		.request__privacy {
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		margin-bottom: 30px;
+  		text-align: center;
+		}
+		.request__privacy__check {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: #fff url(../images/icn_checkbox.png) no-repeat center center;
+      background-size: 0;
+  		&:focus {
+    		box-shadow: 0 0 0 1px #e9342b inset;
+  		}
+  		&:checked {
+    		background-size: contain;
+  		}
+		}
+		.request__privacy__txt {
+      display: inline-block;
+      margin-left: 18px;
+  		font-size: 1.6rem;
+  		a {
+    		display: inline-block;
+    		border-bottom: 1px solid #e9342b;
+    		color: #e9342b;
+  		}
+		}
+	}
+}
+
+
+/*
+  
+                <div class="request__privacy">
+                  <label class="request__privacy__label">
+                    <input type="checkbox" name="privacy" class="request__privacy__check">
+                    <span class="request__privacy__txt"><a href="" target="_blank">プライバシーポリシー</a>に同意する</span>
+                  </label>
+                <!--/.request__privacy--></div>
+  
+*/

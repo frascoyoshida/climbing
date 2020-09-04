@@ -1,0 +1,67 @@
+/*--------------------------
+ sns
+----------------------------*/
+.sns {
+	@at-root {
+		& {
+  		width: 100%;
+		}
+		.sns__head {
+  		margin-bottom: 16px;
+  		text-align: center;
+  		@include mix_mediaSp {
+  	  	margin-bottom: get_vw(16);
+      }
+		}
+		.sns__head__txt {
+  		position: relative;
+  		display: inline-block;
+  		font-size: 3.8rem;
+  		font-style: italic;
+  		line-height: 1;
+  		@include mix_mediaSp {
+	    	@include fontSize(32);
+      }
+  		.bold {
+    		font-weight: 700;
+  		}
+  		&::before,
+  		&::after {
+    		content: "";
+    		position: absolute;
+    		top: 0;
+    		bottom: 0;
+    		display: block;
+    		width: 1px;
+    		height: 100%;
+    		margin: 0 20px;
+    		background-color: #000;
+    		@include mix_mediaSp {
+    	  	margin: 0 get_vw(20);
+        }
+  		}
+  		&::before {
+    		right: 100%;
+    		@include rotate(-30deg);
+  		}
+  		&::after {
+    		left: 100%;
+    		@include rotate(30deg);
+      }
+		}
+		.sns__list {
+  		display: flex;
+  		justify-content: space-between;
+  		@include mix_mediaSp {
+    		justify-content: center;
+      }
+		}
+		.sns__list__item {
+  		width: 36 / 236 * 100%;
+  		@include mix_mediaSp {
+    		width: get_vw(36);
+    		margin: 0 get_vw(7);
+      }
+		}
+	}
+}

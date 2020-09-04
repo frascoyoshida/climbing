@@ -1,0 +1,308 @@
+/*--------------------------
+ home
+----------------------------*/
+.home {
+	@at-root {
+		& {
+			.main__contents__wrap {
+	  		padding-top: 100 / 1500 * 100%;
+	  		@include mix_mediaSp {
+	    		padding-top: 0;
+	      }
+  		}
+		}
+		.home__pickup {
+			padding: 45 / 1500 * 100% 0;
+			background: url(../images/bg_home_pickup.jpg) no-repeat center center;
+			background-size: cover;
+			@include mix_mediaSp {
+				padding: get_vw(25) 0 get_vw(20);
+			}
+			.swiper-wrapper {
+				align-items: stretch;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets {
+				bottom: 0;
+				z-index: 10;
+			}
+			.swiper-pagination-bullet {
+				width: 50px;
+				height: 3px;
+				border-radius: 0;
+				cursor: pointer;
+				background: #fff;
+				opacity: 1;
+				@include mix_mediaSp {
+					width: get_vw(25);
+					height: get_vw(2);
+				}
+			}
+			.swiper-pagination-bullet-active {
+				background: #000;
+			}
+			.swiper-slide {
+				position: relative;
+				@include scale(0.85);
+				@include transition(all 0.2s);
+				transform-origin: bottom;
+				margin-bottom: 30px;
+				@include mix_mediaSp {
+					@include scale(1);
+					margin-bottom: get_vw(18);
+				}
+				.home__pickup__article {
+					&::before {
+						content: "";
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						display: block;
+						background-color: rgba(#fff, 0.8);
+						@include transition(all 0.2s);
+						z-index: 5;
+					}
+				}
+			}
+			.swiper-slide-active {
+				@include scale(1);
+				.home__pickup__article {
+					&::before {
+						opacity: 0;
+						pointer-events: none;
+					}
+				}
+			}
+		}
+		.home__pickup__article {
+			padding-bottom: 30px;
+	 		@include mix_mediaSp {
+		 		height: 100%;
+		 		margin: 0 40 / 768 * 100%;
+			 	padding-bottom: get_vw(20);
+		 	}
+			.article__head {
+				padding: 20 / 684 * 100% 40 / 684 * 100%;
+				font-size: 2.4rem;
+		 		@include mix_mediaSp {
+			 		padding: get_vw(20) get_vw(20) get_vw(15);
+					@include fontSize(13);
+			 	}
+			}
+			.article__data {
+				margin: 0 40 / 684 * 100%;
+			}
+			&.-new {
+				.article__photo {
+					&::before {
+						bottom: -6 / 197 * 100%;
+						left: 12 / 350 * 100%;
+						width: 80px;
+						height: 80px;
+						font-size: 1.4rem;
+				 		@include mix_mediaSp {
+			 				bottom: get_vw(-16);
+			 				left: get_vw(10);
+							width: get_vw(56);
+							height: get_vw(56);
+							@include fontSize(10);
+			 			}
+					}
+				}
+			}
+		}
+		
+		/* .home__special */
+		.home__special {
+			padding: 60 / 1500 * 100% 0 0;
+  		@include mix_mediaSp {
+  	  	padding-top: get_vw(40);
+      }
+		}
+		.home__special__head {
+			margin-bottom: 50 / 1500 * 100%;
+			font-size: 9rem;
+			line-height: 1;
+			text-align: center;
+  		@include mix_mediaSp {
+  	  	margin-bottom: get_vw(35);
+				@include fontSize(38);
+      }
+			.bold {
+				font-weight: 700;
+			}
+			.italic {
+				font-weight: 300;
+				font-style: italic;
+			}
+		}
+		.home__special__pickup {
+			display: flex;
+			overflow: hidden;
+			margin-bottom: 80 / 1500 * 100%;
+  		@include mix_mediaSp {
+  	  	margin-bottom: get_vw(30);
+				.swiper-container-horizontal > .swiper-pagination-bullets {
+					bottom: 0;
+					z-index: 10;
+				}
+				.swiper-pagination-bullet {
+					width: get_vw(25);
+					height: get_vw(2);
+					border-radius: 0;
+					cursor: pointer;
+					background: #f2f2f2;
+					opacity: 1;
+				}
+				.swiper-pagination-bullet-active {
+					background: #000;
+				}
+				.swiper-slide {
+					position: relative;
+					margin-bottom: get_vw(18);
+				}
+				.swiper-slide-active {
+				}
+      }
+		}
+		.home__special__pickup__main {
+			width: 1000 / 1500 * 100%;
+			.home__special__pickup__article {
+				.article__head {
+					font-size: 3rem;
+				}
+			}
+		}
+		.home__special__pickup__sub {
+			width: 500 / 1500 * 100%;
+		}
+		.home__special__pickup__article {
+			padding-bottom: 0;
+			.article__photo {
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					display: block;
+					@include background(linear-gradient(rgba(#000, 0), rgba(#000, 0.28)));
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					display: block;
+					@include background(linear-gradient(45deg, rgba(#000, 0.7) 25%, rgba(#000, 0) 25%, rgba(#000, 0) 75%, rgba(#000, 0.7) 75%), linear-gradient(45deg, rgba(#000, 0.7) 25%, rgba(#000, 0) 25%, rgba(#000, 0) 75%, rgba(#000, 0.7) 75%));
+					background-size: 2px 2px;
+					background-position: 0 0, 1px 1px;
+				}
+			}
+			.article__head {
+				display: inline;
+				padding: 2px 8px;
+				background-color: #fff;
+				font-size: 1.8rem;
+				line-height: 1.8;
+		 		@include mix_mediaSp {
+			 		padding: get_vw(2) get_vw(8);
+					@include fontSize(15);
+			 	}
+			}
+			.article__data {
+				margin: 16px 0 0;
+				padding-top: 10px;
+				@include mix_mediaSp {
+					margin-top: get_vw(8);
+					padding-top: get_vw(5);
+				}
+				&::before {
+					background-color: #fff;
+				}
+			}
+			.article__date {
+				color: #fff;
+				@include mix_mediaSp {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.home__special__pickup__article__data {
+			position: absolute;
+			right: 0;
+			bottom: 24px;
+			left: 0;
+			padding: 20 / 1000 * 100% 110 / 1000 * 100%;
+			z-index: 5;
+  		@include mix_mediaSp {
+	  		bottom: get_vw(8);
+	  		padding: 0 40 / 768 * 100%;
+      }
+		}
+		.home__special__contents {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+  		@include mix_mediaSp {
+	  		display: block;
+      }
+		}
+		.home__special__contents__article {
+			width: 342 / 1100 * 100%;
+  		@include mix_mediaSp {
+	  		width: auto;
+      }
+		}
+		.home__special__button {
+			.button__item {
+				max-width: 447px;
+    		@include mix_mediaSp {
+    	  	max-width: get_vw(244);
+        }
+			}
+		}
+		
+		/* .home__footer */
+		.home__footer {
+			margin-top: 70px;
+			padding-top: 270 / 1500 * 100%;
+			background: url(../images/img_lets_climbing.png) no-repeat center top;
+			background-size: 100% auto;
+			@include mix_mediaSp {
+				margin-top: get_vw(50);
+				padding-top: get_vw(75);
+			}
+		}
+		.home__footer__wrap {
+			display: flex;
+			@include mix_mediaSp {
+				display: block;
+			}
+		}
+		.home__footer__cols {
+			width: 50%;
+			@include mix_mediaSp {
+				width: auto;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+/*--------------------------
+ main
+----------------------------*/
+.main {
+	@at-root {
+		& {
+  		padding-top: 100px;
+  		@include mix_mediaSp {
+    		padding-top: get_vw(58);
+  		}
+		}
+		/* .main__contents */
+		.main__contents {
+  		background-color: #f2f2f2;
+		}
+		.main__contents__head {
+  		margin-bottom: 54px;
+			@include mix_mediaSp {
+  	  	margin-bottom: get_vw(25);
+  		}
+  		.en {
+    		display: block;
+    		margin-bottom: 12px;
+    		font-size: 6rem;
+    		font-weight: 300;
+    		line-height: 1;
+  			@include mix_mediaSp {
+    	  	margin-bottom: get_vw(6);
+					@include fontSize(40);
+    		}
+  		}
+  		.jp {
+    		display: block;
+    		font-size: 1.8rem;
+    		font-weight: 500;
+    		line-height: 1;
+  			@include mix_mediaSp {
+					@include fontSize(13);
+    		}
+  		}
+		}
+		.main__contents__wrap {
+  		position: relative;
+  		display: flex;
+  		align-items: flex-start;
+  		justify-content: space-between;
+  		padding-top: 60 / 1500 * 100%;
+  		padding-bottom: 100 / 1500 * 100%;
+  		@include mix_mediaSp {
+    		display: block;
+    		padding: 0;
+      }
+  		&::before {
+    		content: "";
+    		position: absolute;
+    		top: 0;
+    		left: 822 / 1140 * 100%;
+    		bottom: 0;
+    		display: block;
+    		width: 1px;
+    		background-color: #d2d2d2;
+    		pointer-events: none;
+    		@include mix_mediaSp {
+    		  content: none;
+        }
+  		}
+		}
+		.main__contents__main {
+  		width: 740 / 1100 * 100%;
+  		@include mix_mediaSp {
+  		  width: auto;
+  		  padding: get_vw(35) 40 / 768 * 100% get_vw(30);
+  		  border-bottom: 1px solid #d2d2d2;
+      }
+		}
+		.main__contents__articles {
+  		display: flex;
+  		justify-content: space-between;
+  		flex-wrap: wrap;
+  		@include mix_mediaSp {
+    		display: block;
+    		margin-bottom: get_vw(30);
+      }
+		}
+		.main__contents__article {
+  		width: 350 / 740 * 100%;
+  		margin-bottom: 40 / 740 * 100%;
+  		@include mix_mediaSp {
+    		width: auto;
+      }
+		}
+		.main__contents__button {
+  		.button__item {
+    		max-width: 447px;
+    		@include mix_mediaSp {
+    	  	max-width: get_vw(244);
+        }
+  		}
+		}
+		.main__contents__side {
+  		width: 236 / 1100 * 100%;
+  		@include mix_mediaSp {
+  		  width: auto;
+  		  padding: get_vw(30) 40 / 768 * 100% get_vw(40);
+      }
+		}
+	}
+}
+

@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+@import "compass/";
+@import "compass/reset/";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+$main_color: #000;
+$link_color: #000;
+
+$sp: 767;
+$tb: 767;
+
+@mixin mix_mediaSp {
+  @media screen and (max-width: ($sp + 0px)) {
+    @content;
+  }
+}
+
+@mixin mix_mediaTb {
+  @media screen and (max-width: ($tb + 0px)) {
+    @content;
+  }
+}
+
+@mixin mix_mediaPc {
+  @media screen and (min-width: ($tb + 1px)) {
+    @content;
+  }
+}
+
+@function get_vw($size, $viewport:375){
+	$rate: 100 / $viewport;
+	@return $rate * $size * 1vw;
+}
+
+@mixin fontSize($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+//-----------------------------
+//明朝体
+//-----------------------------
+%mincho{font-family: YuMincho, '游明朝', "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;}
+
+//-----------------------------
+//ゴシック体
+//-----------------------------
+%gothic{font-family: "Roboto Condensed", "Noto Sans JP", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;}
+
+html {
+	width: 100%;
+	background-color: #fff;
+	font-size: 62.5%;
+	@extend %gothic;
+	font-feature-settings: "palt" 1;
+	letter-spacing: 0.05em;
+  line-height: 1.5;
+	color: $main_color;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	-webkit-text-size-adjust: 100%;
+	word-wrap:break-word;
+	-webkit-overflow-scrolling: touch;
+}
+
+a,
+button {
+	color: $link_color;
+	text-decoration: none;
+	@include transition(all 0.2s);
+	&:hover {
+  	opacity: 0.6;
+	}
+  @include mix_mediaSp {
+  	&:hover {
+    	opacity: 1;
+  	}
+  }
+}
+
+img,
+svg {
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.wrap {
+	position: relative;
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 20px;
+	@include mix_mediaSp {
+    padding: 0 40 / 768 * 100%;
+  }
+}
+
+#wrapper {
+	position: relative;
+	z-index: 10 !important;
+	overflow: hidden;
+}
+
+input,
+button,
+select,
+textarea {
+  @include appearance(none);
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+  @extend %gothic;
+  font-weight: 500;
+}
+
+button {
+	color: $link_color;
+  cursor: pointer;
+}
+
+//accordion
+.acc-head {
+  display: block;
+  cursor: pointer;
+}
+
+.acc-body {
+  display: none;
+}
+
+.pc-only {display: inherit !important;}
+.sp-only {display: none !important;}
+
+@include mix_mediaSp {
+  .pc-only {display: none !important;}
+  .sp-only {display: inherit !important;}
+}
+
+@import "header";
+@import "footer";
+@import "main";
+@import "side";
+@import "request";
+@import "button";
+@import "sns";
+@import "article";
+@import "pager";
+@import "home";
+@import "category";
+@import "error";
+@import "swiper";
+
