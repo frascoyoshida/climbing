@@ -1,0 +1,211 @@
+/*--------------------------
+ detail
+----------------------------*/
+.detail {
+	@at-root {
+		& {
+			
+		}
+		.detail__header {
+			margin-bottom: 24px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid #d2d2d2;
+	 		@include mix_mediaSp {
+				margin-bottom: get_vw(20);
+				padding-bottom: get_vw(18);
+		 	}
+		}
+		.detail__photo {
+			margin-bottom: 24px;
+	 		@include mix_mediaSp {
+				margin-bottom: get_vw(20);
+		 	}
+		}
+		.detail__head {
+			margin-bottom: 20px;
+			font-size: 3.6rem;
+			line-height: 1.4;
+			font-weight: 500;
+	 		@include mix_mediaSp {
+				margin-bottom: get_vw(12);
+				@include fontSize(18);
+		 	}
+		}
+		.detail__data {
+			position: relative;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			margin-bottom: 24px;
+			padding-top: 10 / 740 * 100%;
+	 		@include mix_mediaSp {
+		 		margin-bottom: get_vw(12);
+		 		padding-top: get_vw(5);
+		 	}
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block;
+				width: 30px;
+				height: 2px;
+				background-color: #000;
+		 		@include mix_mediaSp {
+					width: get_vw(15);
+					height: get_vw(1);
+			 	}
+			}
+		}
+		.detail__date {
+			display: block;
+			margin-right: 20px;
+			margin-bottom: 4px;
+			font-size: 1.5rem;
+	 		@include mix_mediaSp {
+		 		margin-right: get_vw(10);
+		 		margin-bottom: get_vw(6);
+				@include fontSize(12);
+ 			}
+		}
+		.detail__category {
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+		}
+		.detail__category__item {
+			display: inline-block;
+			margin-right: 4px;
+			margin-bottom: 4px;
+	 		@include mix_mediaSp {
+				margin-right: get_vw(6);
+		 		margin-bottom: get_vw(6);
+ 			}
+			a {
+				display: block;
+				padding: 1px 10px;
+				border-radius: 20px;
+				background-color: #000;
+				font-size: 1rem;
+				font-weight: 500;
+				color: #fff;
+		 		@include mix_mediaSp {
+			 		padding: get_vw(2) get_vw(10);
+					@include fontSize(10);
+	 			}
+			}
+		}
+		.detail__sns {
+			max-width: 236px;
+			.sns__list {
+				@include mix_mediaSp {
+					justify-content: flex-start;
+				}
+			}
+			.sns__list__item {
+				width: 28 / 236 * 100%;
+				@include mix_mediaSp {
+					width: get_vw(28);
+					margin: 0 get_vw(15) 0 0;
+				}
+			}
+		}
+		.detail__contents {
+			margin-bottom: 80px;
+			font-feature-settings: normal;
+			letter-spacing: 0;
+			@include mix_mediaSp {
+				margin-bottom: get_vw(40);
+			}
+			p {
+				margin-bottom: 1.5em;
+				font-size: 1.6rem;
+				font-weight: 300;
+		 		@include mix_mediaSp {
+					@include fontSize(13);
+	 			}
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				position: relative;
+				margin-bottom: 1em;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #d2d2d2;
+				font-size: 2.4rem;
+				font-weight: 500;
+		 		@include mix_mediaSp {
+			 		padding-bottom: get_vw(10);
+					@include fontSize(13);
+	 			}
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: -1px;
+					left: 0;
+					display: block;
+					width: 104px;
+					height: 2px;
+					background-color: #000;
+			 		@include mix_mediaSp {
+				 		width: get_vw(70);
+		 			}
+				}
+			}
+			img {
+				margin-bottom: 1.5em;
+			}
+			ul {
+				margin-bottom: 1.5em;
+				font-size: 1.6rem;
+				font-weight: 300;
+		 		@include mix_mediaSp {
+					@include fontSize(13);
+	 			}
+				li {
+					margin-bottom: 0.5em;
+					margin-left: 1em;
+					text-indent: -1em;
+					&::before {
+						content: "・";
+					}
+				}
+			}
+			blockquote {
+				margin-bottom: 1.5em;
+				padding-left: 10px;
+				border-left: 2px solid #000;
+				font-size: 1.6rem;
+				font-weight: 300;
+		 		@include mix_mediaSp {
+			 		padding-left: get_vw(10);
+					@include fontSize(13);
+	 			}
+			}
+			table {
+				margin-bottom: 1.5em;
+				th, td {
+					padding: 10px 20px;
+					border: 1px solid #b4b4b4;
+					font-size: 1.6rem;
+					font-weight: 300;
+			 		@include mix_mediaSp {
+						padding: get_vw(6) get_vw(16);
+						@include fontSize(13);
+		 			}
+				}
+				th {
+					background-color: #dbdbdb;
+					text-align: center;
+				}
+				td {
+					background-color: #fff;
+				}
+			}
+		}
+	}
+}

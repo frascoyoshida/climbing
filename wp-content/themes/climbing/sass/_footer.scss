@@ -33,6 +33,10 @@
     		border: 6px solid transparent;
     		border-bottom: 10px solid #fff;
   		}
+  		@include mix_mediaTb {
+    		right: get_vw(10);
+    		bottom: get_vw(6);
+      }
   		@include mix_mediaSp {
     		position: static;
     		width: get_vw(36);

@@ -9,7 +9,7 @@ $main_color: #000;
 $link_color: #000;
 
 $sp: 767;
-$tb: 767;
+$tb: 1024;
 
 @mixin mix_mediaSp {
   @media screen and (max-width: ($sp + 0px)) {
@@ -169,7 +169,11 @@ button {
 @import "article";
 @import "pager";
 @import "home";
+@import "download";
 @import "category";
+@import "contact";
+@import "detail";
+@import "related";
 @import "error";
 @import "swiper";
 

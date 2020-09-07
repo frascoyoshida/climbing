@@ -1,0 +1,65 @@
+/*--------------------------
+ related
+----------------------------*/
+.related {
+	@at-root {
+		& {
+  		@include mix_mediaSp {
+  		  margin-bottom: get_vw(15);
+  		}
+		}
+		.related__head {
+  		margin-bottom: 36px;
+  		line-height: 1;
+  		@include mix_mediaSp {
+  		  margin-bottom: get_vw(20);
+      }
+  		.en {
+    		display: inline-block;
+    		margin-right: 20px;
+    		font-size: 3rem;
+    		font-weight: 300;
+    		@include mix_mediaSp {
+      		display: block;
+      		margin-right: 0;
+      		margin-bottom: get_vw(10);
+					@include fontSize(25);
+        }
+  		}
+  		.jp {
+    		display: inline-block;
+    		font-size: 1.6rem;
+    		@include mix_mediaSp {
+      		display: block;
+					@include fontSize(13);
+        }
+  		}
+		}
+		.related__articles {
+  		display: flex;
+  		align-items: flex-start;
+  		justify-content: flex-start;
+  		flex-wrap: wrap;
+  		margin-right: -20 / 740 * 100%;
+  		overflow: hidden;
+  		@include mix_mediaSp {
+  	  	display: block;
+  	  	margin-right: 0;
+      }
+		}
+		.related__article {
+  		width: 236 / 760 * 100%;
+  		margin-right: 16 / 760 * 100%;
+  		@include mix_mediaSp {
+    		width: auto;
+    		margin-right: 0;
+        border-bottom: 1px solid #d2d2d2;
+      }
+      + .related__article {
+        @include mix_mediaSp {
+  	    	margin-top: get_vw(15);
+        }
+      }
+		}
+	}
+}

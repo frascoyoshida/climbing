@@ -182,6 +182,9 @@
   		justify-content: center;
   		margin-bottom: 30px;
   		text-align: center;
+  		@include mix_mediaSp {
+    		margin-bottom: get_vw(24);
+      }
 		}
 		.request__privacy__check {
       display: inline-block;
@@ -189,6 +192,10 @@
       height: 30px;
       background: #fff url(../images/icn_checkbox.png) no-repeat center center;
       background-size: 0;
+  		@include mix_mediaSp {
+	      width: get_vw(30);
+	      height: get_vw(30);
+      }
   		&:focus {
     		box-shadow: 0 0 0 1px #e9342b inset;
   		}
@@ -200,6 +207,10 @@
       display: inline-block;
       margin-left: 18px;
   		font-size: 1.6rem;
+  		@include mix_mediaSp {
+    		margin-left: get_vw(5);
+	    	@include fontSize(13);
+      }
   		a {
     		display: inline-block;
     		border-bottom: 1px solid #e9342b;
@@ -208,15 +219,3 @@
 		}
 	}
 }
-
-
-/*
-  
-                <div class="request__privacy">
-                  <label class="request__privacy__label">
-                    <input type="checkbox" name="privacy" class="request__privacy__check">
-                    <span class="request__privacy__txt"><a href="" target="_blank">プライバシーポリシー</a>に同意する</span>
-                  </label>
-                <!--/.request__privacy--></div>
-  
-*/

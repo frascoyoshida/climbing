@@ -167,6 +167,12 @@
     		}
   		}
 		}
+		.header__nav__sns {
+  		max-width: 236px;
+			@include mix_mediaSp {
+  			max-width: none;
+  		}
+		}
 		.header__nav__banner {
   		display: block;
   		width: 210px;

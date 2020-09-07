@@ -9,8 +9,8 @@
   const nav = document.querySelector('.header__nav');
 	menu.addEventListener(
     'click',
-    event => {
-      event.preventDefault();
+    e => {
+      e.preventDefault();
       const state = menu.getAttribute('data-nav-open');
       if ( state == 'false' ) {
         menu.setAttribute('data-nav-open', 'true');
@@ -22,11 +22,11 @@
     },
     false
   );
-  const nav_anchor = nav.querySelectorAll('a');
-  nav_anchor.forEach((item) => {
+  const navAnchor = nav.querySelectorAll('a');
+  navAnchor.forEach((item) => {
   	item.addEventListener(
       "click",
-      event => {
+      e => {
         const state = menu.getAttribute('data-nav-open');
         if ( state == 'false' ) {
           menu.setAttribute('data-nav-open', 'true');
@@ -39,6 +39,43 @@
       false
     );
   });
+
+  //modal
+  const download = document.querySelector('.download');
+  const openModal = (e) => {
+    download.setAttribute('data-open-modal', 'true');
+  }
+  const closeModal = (e) => {
+    download.setAttribute('data-open-modal', 'false');
+  }
+  const downloadClose = document.querySelector('.download__close');
+	downloadClose.addEventListener(
+    "click",
+    e => {
+      closeModal();
+    },
+    false
+  );
+  document.addEventListener(
+    "click",
+    e => {
+      if ( !e.target.closest('.download__wrap') && !e.target.closest('.button') ) {
+        closeModal();
+      }
+    },
+    false
+  );
+  const downloadAnchor = download.querySelectorAll('a');
+  downloadAnchor.forEach((item) => {
+  	item.addEventListener(
+      "click",
+      e => {
+        closeModal();
+      },
+      false
+    );
+  });
+
 
   //swiper
   const swiper = new Swiper('.swiper-container', {
