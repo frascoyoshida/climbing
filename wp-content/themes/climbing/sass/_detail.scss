@@ -7,7 +7,7 @@
 			
 		}
 		.detail__header {
-			margin-bottom: 24px;
+			margin-bottom: 30px;
 			padding-bottom: 30px;
 			border-bottom: 1px solid #d2d2d2;
 	 		@include mix_mediaSp {
@@ -62,6 +62,7 @@
 			margin-right: 20px;
 			margin-bottom: 4px;
 			font-size: 1.5rem;
+			font-weight: 300;
 	 		@include mix_mediaSp {
 		 		margin-right: get_vw(10);
 		 		margin-bottom: get_vw(6);
@@ -111,6 +112,49 @@
 				}
 			}
 		}
+		.detail__index {
+			margin-bottom: 40px;
+			padding: 25px 90px;
+			border: 1px solid #d2d2d2;
+			@include mix_mediaSp {
+				margin-bottom: get_vw(18);
+				padding: get_vw(15) get_vw(35);
+			}
+		}
+		.detail__index__head {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #d2d2d2;
+			font-size: 1.6rem;
+			font-weight: 500;
+			@include mix_mediaSp {
+				margin-bottom: get_vw(10);
+				padding-bottom: get_vw(8);
+				@include fontSize(13);
+			}
+		}
+		.detail__index__list {
+			font-feature-settings: normal;
+			letter-spacing: 0;
+		}
+		.detail__index__item {
+			margin-left: 1em;
+			text-indent: -1em;
+			font-size: 1.6rem;
+			font-weight: 300;
+			@include mix_mediaSp {
+				@include fontSize(13);
+			}
+			+ .detail__index__item {
+				margin-top: 5px;
+				@include mix_mediaSp {
+					margin-top: get_vw(5);
+				}
+			}
+			&::before {
+				content: "・";
+			}
+		}
 		.detail__contents {
 			margin-bottom: 80px;
 			font-feature-settings: normal;
@@ -133,7 +177,9 @@
 			h5,
 			h6 {
 				position: relative;
+				margin-top: 0.5em;
 				margin-bottom: 1em;
+				padding-top: 1em;
 				padding-bottom: 10px;
 				border-bottom: 1px solid #d2d2d2;
 				font-size: 2.4rem;

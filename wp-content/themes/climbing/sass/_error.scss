@@ -4,11 +4,17 @@
 .error {
 	@at-root {
 		& {
-  		padding: 180 / 1500 * 100% 0 240 / 1500 * 100%;
+  		padding: 20px 0 240 / 1500 * 100%;
   		background: url(../images/bg_error.jpg) no-repeat center center;
   		background-size: cover;
+  		.breadclumb {
+    		margin-bottom: 160 / 1100 * 100%;
+        @include mix_mediaSp {
+      		margin-bottom: get_vw(70);
+        }
+  		}
       @include mix_mediaSp {
-  	  	padding: get_vw(65) 0 get_vw(100);
+  	  	padding: get_vw(20) 0 get_vw(100);
       }
     }
     .error__head {

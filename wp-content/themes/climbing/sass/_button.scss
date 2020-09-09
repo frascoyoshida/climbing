@@ -56,11 +56,20 @@
     		margin: auto 0;
     		box-shadow: 2px 2px 0 0 #000;
     		@include rotate(-45deg);
+        @include transition(all 0.2s);
         @include mix_mediaSp {
       		right: get_vw(20);
       		width: get_vw(8);
       		height: get_vw(8);
         }
+  		}
+  		&:hover {
+    		&::before {
+      		right: 26px;
+          @include mix_mediaSp {
+        		right: get_vw(20);
+          }
+    		}
   		}
   		&.-download {
     		&::before {

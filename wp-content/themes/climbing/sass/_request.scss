@@ -12,13 +12,14 @@
   		padding: 40 / 750 * 100% 0;
   		background: url(../images/bg_request.jpg) no-repeat center center;
   		background-size: cover;
+  		border-top: 1px solid #d2d2d2;
   		@include mix_mediaSp {
     		display: block;
     		padding: get_vw(30) 40 / 768 * 100% get_vw(40);
       }
 		}
 		.request__wrap {
-  		max-width: 100%;
+  		max-width: 740px;
   		width: 590 / 750 * 100%;
   		@include mix_mediaSp {
         width: auto;

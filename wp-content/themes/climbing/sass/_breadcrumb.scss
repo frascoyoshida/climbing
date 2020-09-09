@@ -1,0 +1,37 @@
+/*--------------------------
+ breadclumb
+----------------------------*/
+.breadclumb {
+	@at-root {
+		& {
+		}
+		.breadclumb__item {
+  		display: inline;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      @include mix_mediaSp {
+				@include fontSize(11);
+      }
+  		a {
+    		display: inline;
+    		color: #a6a6a6;
+    		&:hover {
+      		color: #000;
+    		}
+  		}
+  		&:last-child {
+    		a {
+      		color: #000;
+    		}
+  		}
+  		+ .breadclumb__item {
+    		&::before {
+      		content: "/";
+      		display: inline;
+      		margin: 0 1em;
+      		color: #a6a6a6;
+    		}
+  		}
+		}
+	}
+}
